@@ -1,0 +1,4 @@
+//for executable files//
+*.exe
+
+pending.cpp
