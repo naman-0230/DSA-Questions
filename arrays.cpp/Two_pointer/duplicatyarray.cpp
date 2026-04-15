@@ -14,8 +14,7 @@ int main()
     arr1[0]=arr[0];
     int i ,j=0;
 
-    for(int i=1; i<n;i++)
-{
+    for(int i=1; i<n;i++){
             if(arr1[j]!=arr[i])
             { 
                 j++;
@@ -23,7 +22,8 @@ int main()
             }
             
         }
-        for(int i=0; i<j+1; i++){
+
+    for(int i=0; i<j+1; i++){
             cout<< arr1[i]<<" ";
 
         }
