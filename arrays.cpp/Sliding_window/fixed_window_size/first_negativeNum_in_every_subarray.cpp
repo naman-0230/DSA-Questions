@@ -9,7 +9,8 @@ int k = 3;
 
 vector<int> ans;
 deque<int> dq;
-for(int i=0; i<k; i++){
+
+for(int i=0; i<k; i++){          //first k elements
    if(v[i]<0){
     dq.push_back(i);
    }
