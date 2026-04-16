@@ -10,12 +10,10 @@ int k = 3;
 
 vector<int> ans;
 deque<int> dq;
-int max = INT_MIN;
-
 
 for(int i=0; i<k; i++){                     //first k elements
 
-  while(!dq.empty() && dq.back() <= v[i]){
+  while(!dq.empty() && v[dq.back()] <= v[i]){
     dq.pop_back();
     }
 dq.push_back(i);
