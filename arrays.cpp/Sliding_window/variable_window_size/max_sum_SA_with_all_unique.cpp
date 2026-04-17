@@ -30,7 +30,7 @@ for(int i=0; i< v.size(); i++){
 //         m.clear();       buttttt its not good, can give wrong output 
 //         j= i+1;         thats why cant use kadane in this problem
 //     }                
-//          FOR NEGATIVE VALUES IN INPUT CASE, NEED ADVANCE METHODS 
+//          FOR NEGATIVE VALUES IN INPUT CASE, NEED ADVANCE METHODS (refer to VERY HARD1)
 
  }
 
