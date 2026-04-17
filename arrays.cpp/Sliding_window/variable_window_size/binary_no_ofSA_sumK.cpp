@@ -26,7 +26,7 @@ return count;
 }
 
 int main(){
- vector<int> v ={1,0,1,0,1};//{1,0,1,1,0,1,0,1,0,0};
+ vector<int> v ={1,0,1,0,1};     //this is applicable for arrrays other than binary one too..except negative no.
 int k = 2;
 
 int ans= sumK(v,k) - sumK(v,k-1);
