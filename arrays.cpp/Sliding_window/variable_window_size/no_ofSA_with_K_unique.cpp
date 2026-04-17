@@ -18,14 +18,14 @@ int countSA(vector<int> &v , int k){
         m.erase(v[j]);
         }
         j++;
-    }
-    if(m.size()<=k){          // first of all for count of SA ==k , you cant do count++
+       }
+                              // first of all for count of SA ==k , you cant do count++
                               // need to do count i-j+1.... but this is for all SA <=k
                               // so we call the function for and get <=k and then <=k-1
                               // then subtract it to get =k one
 
         count += i-j+1 ;      //important count for variable window//
-    }
+    
  }
  return count;
 }
@@ -35,6 +35,6 @@ int main (){
  int k=3;
  
  int ans = countSA(v,k)-countSA(v, k-1);
-
+ cout<< ans;
     return 0;
 }
