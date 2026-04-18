@@ -5,9 +5,10 @@ using namespace std;
 
 int lengthSA(vector<int> &v , int k){
    
- int j=0;                         
- int max_length=0, length=0;
- int count=0;                    ///instead of map just use a counter////
+ int j=0;                         /// problem same can be given as maximum consecutive 1s
+ int max_length=0, length=0;    /// where you flip atmost k zeroes to get most consecutive 1s
+
+ int count=0;                          ///instead of map just use a counter////
  
  for(int i=0;i< v.size(); i++){
     if(v[i]==0){
