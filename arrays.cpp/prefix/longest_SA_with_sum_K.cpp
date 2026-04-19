@@ -29,8 +29,8 @@ for(int i=0; i< v.size(); i++){
 
 }
 int main (){
-  vector<int> v ={1,2,0,1,1,0,3,0,1};
- int k=2;
+  vector<int> v ={2,3,5,3,2,0,1,2};
+ int k=6;
  
  cout<<countSA(v,k);
     return 0;
