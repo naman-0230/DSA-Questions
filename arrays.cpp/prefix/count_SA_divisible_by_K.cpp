@@ -14,7 +14,7 @@ int count = 0;
     sum += v[i];
     int rem = sum % k;
 
-    if(rem< 0){
+    if(rem< 0){           //imp negative remainder handling 
       rem += k;
     }
     if(m.find(rem - 0)!=m.end()){
