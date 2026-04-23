@@ -4,7 +4,7 @@ using namespace std;
 
 bool isPossible(vector<int> &v, int n , int mid){
    
-    int time = 0;
+    int time = 0;                       //another problem same to this is smallest divisor given a threshold
     for(int i=0; i< v.size(); i++){
      time += ((v[i]+mid-1)/mid);        ///imp ceil formula most optimal
     }
