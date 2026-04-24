@@ -1,2 +1,2 @@
 # DSA-Questions
-Solving DSA questions in different topics and learning more.
+Solving DSA questions, learning patterns over a range of problems around bunch of topics.
