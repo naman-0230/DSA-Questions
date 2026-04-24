@@ -14,10 +14,15 @@ cin>>arr[i];
 
 int i=0, j=n-1, watermax=0, x;
 while(i<j){
-  x=min(arr[i],arr[j])*(j-i);
-  watermax= max(x,watermax);
-  if(arr[i]<arr[j]){ i++;}
-  else{ j--;}
+
+  x = min(arr[i] , arr[j])*(j - i);
+  watermax = max(x , watermax);
+  if(arr[i] < arr[j]){
+    i++;
+    }
+  else{
+    j--;
+    }
 }
 
 cout<<watermax;

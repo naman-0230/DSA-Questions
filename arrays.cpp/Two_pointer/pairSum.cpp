@@ -26,7 +26,7 @@ while(i<j){
         i++;
         j--;
         flag=false;
-         while(i < j && arr[i] == arr[i-1]) i++;        //couldnt understand
+         while(i < j && arr[i] == arr[i-1]) i++;        //for duplicates
             while(i < j && arr[j] == arr[j+1]) j--;
     }
     else if(sum<target){

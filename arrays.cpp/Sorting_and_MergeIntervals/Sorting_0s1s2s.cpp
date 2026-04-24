@@ -1,3 +1,13 @@
+// Also known as Dutch National Flag Algorithm
+
+// 🧠 Problem
+// Input:  [2,0,2,1,1,0]
+// Output: [0,0,1,1,2,2]
+
+// 👉 Sort without using built-in sort
+// 👉 Do it in O(n) and O(1) space
+
+
 #include<iostream>
 #include<algorithm>
 using namespace std;

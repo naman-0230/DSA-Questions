@@ -39,7 +39,7 @@ int main(){
 vector<int> v ={0,3,4,7,10,9};
 int cows = 4;
 
-sort(v.begin(), v.end());
+sort(v.begin(), v.end());    ///imp to sort as elements are co-ordinates so consecutive cordinates will have least value of distance
 
 cout<< max_of_minD(v, cows);
 

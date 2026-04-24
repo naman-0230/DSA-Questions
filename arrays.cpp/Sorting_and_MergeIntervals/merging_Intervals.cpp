@@ -18,7 +18,7 @@ vector<vector<int>> mergeIntervals(vector<vector<int>> &intervals){
         }
     }
 
-  
+
 return temp;
 }
 int main(){

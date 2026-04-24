@@ -16,7 +16,7 @@ for(int i=0; i<n-zeroesfound; i++){
         for(int j=i;j<n-1;j++){         //left shift
             arr[j]=arr[j+1];
         }
-      arr[n-1]=0;
+      arr[n - 1 - zeroesfound]=0;
       zeroesfound++;  //imp again
       i--;    //important concept
     }

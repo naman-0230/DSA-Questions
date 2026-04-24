@@ -1,3 +1,21 @@
+// Meeting Rooms I (Feasibility Problem)
+// 📌 Problem Statement
+
+// You are given a list of meeting time intervals:
+
+// intervals = [[start1, end1], [start2, end2], ...]
+
+// 👉 Each interval represents a meeting with:
+
+// start time
+// end time
+// ❓ Task
+
+// Determine:
+
+// Can a single person attend all meetings?
+
+
 #include<bits/stdc++.h>
 #include<vector>
 using namespace std;
