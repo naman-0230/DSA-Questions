@@ -24,7 +24,14 @@ for(int i=0; i<mat.size(); i++){
     }
 }
 
+//we can always use reverse fn too for reversing
+//for(int i=0; i<mat.size(); i++){
+//   reverse(mat[i].begin(),mat[i].end()); 
+//}
 
+
+
+////// for anticlockwise,, just need to reverse col instead of rows... simple
 
 for(auto &x: mat){
     for(int v: x){
