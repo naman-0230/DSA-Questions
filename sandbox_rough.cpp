@@ -1,23 +1,39 @@
 #include<iostream>
 #include<vector>
+#include<queue>
+#include<tuple>
 using namespace std;
 
+int main(){
 
-int sumArray(vector<int> &v){
-    int sumArray = 0;
-    for(int i=0; i<v.size(); i++){
-    sumArray += v[i];
+vector<vector<int>> v = {
+        {1,4,7},
+        {2,5,8},
+        {3,6,9}};
+vector<int> ans;
+
+priority_queue<tuple<int,int,int>, vector<tuple<int,int,int>>, greater<tuple<int,int,int>>> pq;
+
+for(int i = 0; i< v.size(); i++){
+    pq.push({v[i][0], i , 0});
+}
+while(!pq.empty()){
+
+auto t = pq.top();
+int val = get<0>(t);
+int arr = get<1>(t);
+int idx = get<2>(t);
+pq.pop();
+
+ans.push_back(val);
+if(idx + 1 < v[arr].size()){
+    pq.push({v[arr][idx + 1], arr, (idx+1)});
     }
-    return sumArray;
 }
 
+for(int x : ans){
+    cout<< x <<" ";
+}
 
-
-
-int main(){
-vector<int>v = {25,46,28,49,24};
-int students = 4;
-cout<< sumArray(v);
-
-return 0;
+    return 0;
 }
