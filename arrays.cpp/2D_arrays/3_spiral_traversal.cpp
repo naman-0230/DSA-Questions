@@ -26,15 +26,15 @@ if(top<=bottom){                    /// other thing i can do .. main is to remem
 for(int j= right; j>=left; j--){
     ans.push_back(mat[bottom][j]);
 }
-}
 bottom--;
+}
 
 if(left<=right){
 for(int i= bottom; i>=top; i--){
     ans.push_back(mat[i][left]);
 }
-}
 left++;
+}
 }
 
 
