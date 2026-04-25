@@ -1,3 +1,7 @@
+
+// only when 1 ≤ v[i] ≤ n
+
+
 #include<iostream>
 #include<vector>
 #include<cmath>

@@ -1,3 +1,16 @@
+// Problem Statement (clean)
+// You are given:
+
+// k → max number of projects you can pick
+// w → initial capital
+
+// Each project has:
+
+// capital[i] → minimum capital required
+// profit[i] → profit gained after completion
+// 🎯 Goal
+
+// 👉 Maximize final capital after doing at most k projects
 
 #include<iostream>
 #include<vector>
