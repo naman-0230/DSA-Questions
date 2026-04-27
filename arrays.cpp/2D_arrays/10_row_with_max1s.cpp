@@ -11,9 +11,9 @@ int BsearchMatrix(vector<vector<int>> &mat){        ////rows are given SORTED
 
   for(int i=0; i<n; i++){
 
-  int low = 0, high = m-1;
+   int low = 0, high = m-1;
 
-  while(low<=high){
+   while(low<=high){
     int mid = low + (high - low)/2;
     if(mat[i][mid]==1){
       high = mid - 1;
@@ -21,13 +21,13 @@ int BsearchMatrix(vector<vector<int>> &mat){        ////rows are given SORTED
     else{
       low = mid + 1;
     }
-  }
-  int count_1 = m - low; 
+    }
+   int count_1 = m - low; 
   
-  if(count_1 > max_count){
+   if(count_1 > max_count){
     max_count = count_1;
     row_i = i;
-  }
+    }
 }
 return row_i;
 
