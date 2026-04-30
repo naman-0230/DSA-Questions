@@ -8,7 +8,7 @@ using namespace std;
 int expCalc(string &s){
 
   stack<int> st;
-  for(char c: s){
+  for(char c: s){            ///// for prefix traverse from right to left////
     if(isdigit(c)){
         st.push(c - '0');
     }
