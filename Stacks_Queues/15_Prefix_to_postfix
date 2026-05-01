@@ -1,0 +1,20 @@
+Correct Method: Prefix → Postfix
+
+👉 Use a stack of strings
+
+🧠 Idea
+
+Traverse RIGHT → LEFT
+
+📌 Steps
+Scan from right to left
+If operand → push to stack
+If operator:
+Pop 2 operands
+
+Form:
+
+operand1 operand2 operator
+
+Push back
+End → stack top = answer
