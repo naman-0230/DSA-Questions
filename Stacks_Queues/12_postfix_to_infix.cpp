@@ -42,6 +42,7 @@ string postfixToInfix(string s){
 }
 
 int main(){
-    string s = "2 3 c + * 7 *";
+    string s = "22 3 c + * 7 *";
     cout << postfixToInfix(s);
+    return 0;
 }
