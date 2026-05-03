@@ -18,8 +18,8 @@ bool validParentheses(string &s){
            c== ')' && top != '(' ||
            c== ']' && top != '[')
            return false;  
+           st.pop();          //popping after validation is better then popping first
         }
-        st.pop();          //popping after validation is better then popping first
   }
   return st.empty();
 }
