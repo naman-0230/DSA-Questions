@@ -54,7 +54,7 @@ return maxArea;
 
 
 int main(){
-vector<int> v = {2,1,5,6,2,3};
+vector<int> v = {2,1,5,6,3,5};
 cout<< maxArea(v);
 return 0;
 }
