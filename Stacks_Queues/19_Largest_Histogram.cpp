@@ -11,7 +11,7 @@ vector<int> lastSmaller(vector<int> &v){
     stack<int> st;
 
     for(int i= v.size()-1 ; i>= 0 ;i--){
-        while(!st.empty() && v[st.top()] >= v[i]){     // >= not >
+        while(!st.empty() && v[st.top()] > v[i]){  
             lastSmaller[st.top()] = i;
             st.pop();
         }
@@ -25,7 +25,7 @@ vector<int> nextSmaller(vector<int> &v){
     stack<int> st;
 
     for(int i=0;i<v.size();i++){
-        while(!st.empty() && v[st.top()] >= v[i]){
+        while(!st.empty() && v[st.top()] > v[i]){
             nextSmaller[st.top()] = i;
             st.pop();
         }
