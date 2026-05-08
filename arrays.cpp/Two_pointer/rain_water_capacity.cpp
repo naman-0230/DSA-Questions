@@ -21,7 +21,7 @@ int main() {
         else {
                 water += (rightmax - height[right]);
             
-            right--;
+            right--; 
         }
     }
 
