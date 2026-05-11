@@ -27,6 +27,7 @@ cin >> s;
 reverseString(s);
 cout<< s<<endl;
 
+
 string a("abcd");
 string b("qwerty");
 cout<< concatenateString(a,b);
