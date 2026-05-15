@@ -1,35 +1,34 @@
 #include<iostream>
-#include<stack>
-#include<string>
 #include<vector>
+#include<string>
+#include<algorithm>
 using namespace std;
-
-bool redunParentheses(string &s){
-  stack<char> st;
-  for(char c : s){
-      if(c!= '}' && c!= ')' && c!= ']'){
-          st.push(c);
-        }
-        else{
-        bool flag = true;
-        while(!st.empty() && (st.top()!= '(' && st.top()!= '{' && st.top()!= '[')){
-          if(st.top() == '+' || st.top() == '-' || st.top() == '/' || st.top() == '*' || st.top() == '^'){
-            flag = false;
-          }
-          st.pop();
-        }
-        if(flag){
-            return flag;
-        }
-        st.pop();   
+bool isvowel(char c){
+    if(c=='a'||c=='e'||c=='i'||c=='o'||c=='u'||
+       c=='A'||c=='E'||c=='I'||c=='O'||c=='U') return true;
+    else return false;
 }
+void reverseString(string &s){
+    int i = 0;
+    int j = s.size()-1;
+    while(i < j){
+        if(isvowel(s[i]) && isvowel(s[j])){    //// can use isalpha for that i just created own function but no need 
+            swap(s[i], s[j]);
+            i++;
+            j--;
+        }
+        else if(!isvowel(s[i])){
+            i++;
+        }
+        else if(!isvowel(s[j])){
+            j--;
+        }
+    }
 }
-return false;
-}
-
 int main(){
-string s = "{a+b*(c-d)}";
-cout<< redunParentheses(s);
+string s = {"cate"};
+reverseString(s);
+cout<<s; 
 
 return 0;
 }
