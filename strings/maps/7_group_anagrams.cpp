@@ -12,10 +12,10 @@ vector<vector<string>> groupAnagrams(vector<string> &v){
     for(string word: v){
         string temp = word;
         sort(temp.begin(), temp.end());
-        m[temp].push_back(word);
+        m[temp].push_back(word);           //main concept of the problem
     }
     for(auto &x: m){
-        ans.push_back(x.second);
+        ans.push_back(x.second);    //imp thing here 
     }
     return ans;
 }
