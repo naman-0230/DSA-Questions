@@ -16,13 +16,17 @@ bool isNewPalindrome(string &s){
     int i = 0;
     int j = s.size()-1;
     while(i < j){
+
         if(s[i] != s[j]){
+
             string temp = s;
-            temp.erase(i,1);
+            temp.erase(i,1);                      ///imp point here is to erase it 
+
             if(isPalindrome(temp)) return true;
             else{
                 string temp = s;
                 temp.erase(j,1);
+
                 if(isPalindrome(temp)) return true;
                 else return false;
             }
