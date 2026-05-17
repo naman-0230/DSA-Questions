@@ -11,7 +11,7 @@ bool isVowel(char c){
     else return false;
 }
 
-vector<int> max_vowels(string &s, int k){
+vector<int> count_vowels(string &s, int k){
     vector<int> ans;
     deque<int> dq;
     int count = 0;
@@ -42,7 +42,7 @@ int main(){
 string s = {"hiihisiswhatitis"};
 int k = 4;
 
-vector<int> res = max_vowels(s, k);
+vector<int> res = count_vowels(s, k);
 
 for(int x: res){
     cout<< x<<" ";
