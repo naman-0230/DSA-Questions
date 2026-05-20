@@ -9,7 +9,7 @@ using namespace std;
 int countSS(string &s){
     int count = 0;
     int j = 0;
-    int countA = 0, countB = 0, countC = 0; 
+    int countA = 0, countB = 0, countC = 0;  
 
     for(int i=0; i<s.size(); i++){
 
