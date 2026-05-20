@@ -1,0 +1,1 @@
+// implementation of both and how it works ... code is optional
