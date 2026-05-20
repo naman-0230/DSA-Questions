@@ -43,12 +43,24 @@ int lengthSS(string &s){    //////HARD ONE ... REVISE PROPERLY
             j++;
         }   
     }
+    bool alreadyBalanced = true;
+
+    for(int k = 0; k < 26; k++){
+
+        if(total[k] > balance){
+
+        alreadyBalanced = false;
+        break;
+        }
+    }
+
+    if(alreadyBalanced) return 0;
 
     return min_length;
 }
 
 int main(){
-    string s = {"qqqq"};
+    string s = {"qwer"};
 
     cout<< lengthSS(s);
 
