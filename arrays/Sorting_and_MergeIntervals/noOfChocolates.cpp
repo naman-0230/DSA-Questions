@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//jaha p bhi max min ko minimize krna .. think about sorting one time 
+
 int chocolateDistribution(vector<int>& arr, int m) {
     int n = arr.size();
 
