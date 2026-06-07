@@ -4,37 +4,15 @@
 #include<deque>
 #include<unordered_map>
 using namespace std;
-int lengthSS(string &s){      
-
-    int max_length = 0;
-    int length = 0;
-    unordered_map<char, int> m;
-    deque<int> dq;
-
-    for(int i=0; i<s.size(); i++){
-        m[s[i]]++;
-
-        while(!dq.empty() && m[s[i]] > 1){
-            int x = dq.front();
-            m[s[x]]--;
-            dq.pop_front();
-            length--;
-        }
-
-        if(m[s[i]] <= 1){
-            dq.push_back(i);
-            length++;
-        }
-        max_length = max(max_length, length);
-        
-    }
-    return max_length;
+int sum(int a , int b){
+    if(a==0) return b;
+    b+= a%10; 
+    sum(a/10 , b);
 }
 
 int main(){
-string s = {"kvdrhbgcclvsvvwiolvkn"};
-cout<<lengthSS(s);
-
+int a= 7525; int b =0;
+cout<<sum(a,b);
 return 0;
 }
 

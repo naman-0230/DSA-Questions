@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
-
-int findPeak(int arr[], int n) {
+ 
+int findPeak(int arr[], int n) {     //HERE WHILE(LOW<HIGH) NOT LOW<= HIGH ALSO HIGH = MID;
     int i = 0, j = n - 1;            
     while (i < j) {
         int mid = i + (j - i) / 2;
