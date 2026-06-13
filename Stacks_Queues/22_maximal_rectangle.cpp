@@ -1,4 +1,4 @@
-// You are given a binary matrix (0 and 1):   matrix[i][j] ∈ {0,1}
+ // You are given a binary matrix (0 and 1):   matrix[i][j] ∈ {0,1}
 
 // 👉 Find the largest rectangle containing only 1’s
 

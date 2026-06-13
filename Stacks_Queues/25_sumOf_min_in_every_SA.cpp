@@ -46,7 +46,7 @@ int sumOfMin(vector<int> &v){
 }
 
 int main(){
-    vector<int> v = {2,2,2};
+    vector<int> v = {3,1,2,4};
     cout<< sumOfMin(v);
     return 0;
 }
