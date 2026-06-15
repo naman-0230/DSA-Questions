@@ -14,7 +14,7 @@ void subs(vector<int> &v, int idx, int &curr_sum, int k, int &count){
     subs(v, idx+1, curr_sum, k, count);
 
     curr_sum -= v[idx]; 
-
+    
     subs(v, idx+1, curr_sum, k, count);
     
 }
