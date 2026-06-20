@@ -17,7 +17,7 @@ void combo(int k, int n, int start, vector<int> &curr, int &curr_sum){
 
     for(int i= start; i<=9; i++){  //grasp the start logic cause its the only bug before
     //not using used and just using start one cause if we use used and only skip the previous number 
-    //we will get 1 2 3, 2 1 3, 3 1 2 kinda answer but we want unique permutation
+    //we will get 1 2 3, 2 1 3, 3 1 2 kinda answer but we want unique combination
 
         if(curr_sum + i > n) break;
 
@@ -36,7 +36,7 @@ int main(){
     vector<int> curr;
     int curr_sum = 0;
 
-    combo(k,n,0,curr,curr_sum);
+    combo(k,n,1,curr,curr_sum);
 
     for(auto x: ans){
         for(int y:x){
