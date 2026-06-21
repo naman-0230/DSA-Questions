@@ -20,23 +20,18 @@ void print(Node* head){
     }
 }
 
-Node* reverse(Node* head){
-    if(head == nullptr) return nullptr;
-    if(head-> next == nullptr) return head;
+Node* reverse(Node* current, Node* prev, Node* forward){
 
-    Node* current = head;
-    Node* prev = nullptr;
-    Node* forward = head;
+    if(current == nullptr) return prev;
 
-    while(current != nullptr){
-        forward = forward->next;
-        current->next = prev;
+    forward = current->next;
+    current-> next = prev;
 
-        prev = current;
-        current = forward;
-    }
+    prev = current;
+    current = forward;
 
-    return prev;
+    return reverse(current, prev, forward);
+
 }
 
 int main(){
@@ -49,7 +44,11 @@ int main(){
     second->next = third;
     third->next = fourth;
 
-    head = reverse(head);
+    Node* current = head;
+    Node* prev = nullptr;
+    Node* forward = head;
+
+    head = reverse(current, prev, forward);
     print(head);
 
 return 0;
