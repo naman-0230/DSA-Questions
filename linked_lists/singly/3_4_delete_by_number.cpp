@@ -12,18 +12,34 @@ class Node{
     }
 };
 
-Node* deleteNode(Node* head){
-
-    if(head == nullptr) return nullptr;
+Node* deleteNode(Node* head, int num){
     
-    if(head->next == nullptr){
+    if(head == nullptr) return nullptr;
+
+    if(head->next == nullptr && head->data == num){
         delete head;
         return nullptr;
-    } 
+    }
+    if(head->next == nullptr && head->data != num) return head;
 
-    Node*temp = head->next;
-    delete head;
-    return temp;
+    if(head->data == num){
+        Node* second = head->next;
+        delete head;
+        return second;
+    }
+
+    Node* current = head;
+    Node* prev;
+
+    while(current != nullptr && current->data != num){
+        prev = current;
+        current = current->next;
+    }
+    if(current == nullptr) return head;
+
+    prev->next = current->next;
+    delete current;
+    return head;
 }
 
 
@@ -45,7 +61,10 @@ int main(){
     second->next = third;
     third->next = fourth;
 
-    head = deleteNode(head);
+    int num = 20;
+
+    head = deleteNode(head, num);
+    
     print(head);
 
 return 0;

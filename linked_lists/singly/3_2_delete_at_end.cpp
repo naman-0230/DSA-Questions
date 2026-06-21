@@ -15,15 +15,29 @@ class Node{
 Node* deleteNode(Node* head){
 
     if(head == nullptr) return nullptr;
-    
+
     if(head->next == nullptr){
         delete head;
         return nullptr;
-    } 
+    }
 
-    Node*temp = head->next;
-    delete head;
-    return temp;
+    Node* current = head;
+    // Node* prev;                                with additional pointer(good as well)
+
+    // while(current->next != nullptr){             
+    //     prev = current;
+    //     current = current->next;
+    // }
+    // prev->next = nullptr;
+    // delete current;
+    // return head;
+
+    while(current->next->next != nullptr){         //no extra pointer
+        current = current-> next; 
+    }
+    delete current->next;
+    current->next = nullptr;
+    return head;
 }
 
 

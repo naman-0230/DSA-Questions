@@ -12,18 +12,35 @@ class Node{
     }
 };
 
-Node* deleteNode(Node* head){
-
-    if(head == nullptr) return nullptr;
+Node* deleteNode(Node* head, int pos){
     
-    if(head->next == nullptr){
+    if(head == nullptr) return nullptr;
+
+    if(head->next == nullptr && pos == 1){
         delete head;
         return nullptr;
-    } 
+    }
+    if(head->next == nullptr && pos > 1) return nullptr;
 
-    Node*temp = head->next;
-    delete head;
-    return temp;
+    if(pos == 1){
+        Node* second = head->next;
+        delete head;
+        return second;
+    }
+
+    int k = pos-1;
+    Node* current = head;
+
+    while(current->next->next != nullptr && k>1){
+        current = current->next;
+        k--;
+    }
+    if(k>1) return nullptr;
+    
+    Node* temp = current->next;
+    current->next = temp->next;
+    delete temp;
+    return head;
 }
 
 
@@ -45,7 +62,9 @@ int main(){
     second->next = third;
     third->next = fourth;
 
-    head = deleteNode(head);
+    int pos = 3;
+
+    head = deleteNode(head, pos);
     print(head);
 
 return 0;
