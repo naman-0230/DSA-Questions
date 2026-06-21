@@ -12,8 +12,16 @@ class Node{
     }
 };
 
+void print(Node* head){
+    Node* current = head;
+    while(current != nullptr){
+        cout<<current->data<<" ";
+        current = current->next;
+    }
+}
 
-Node* firstNode_inLoop(Node* head){
+
+Node* remove_loop(Node* head){
 
     Node* slow = head;
     Node* fast = head;
@@ -26,15 +34,21 @@ Node* firstNode_inLoop(Node* head){
         if(slow == fast) break;
     }
 
-    if(fast == nullptr || fast->next == nullptr) return nullptr;
+    if(fast == nullptr || fast->next == nullptr) return head;
 
-    //lets choose fast for next phase
     while(fast != tempo){
         tempo = tempo->next;
         fast = fast->next;
     }
-    return tempo;
 
+    Node* lastN = fast;
+    while(lastN->next != fast){
+        lastN = lastN->next;
+    }
+
+    lastN->next = nullptr;
+    
+    return head;
 }
 
 int main(){
@@ -52,8 +66,9 @@ int main(){
     fifth->next = sixth;
     sixth-> next = fourth;
 
-    Node* temp = firstNode_inLoop(head);
-    cout<<temp->data;
+    head = remove_loop(head);
+    
+    print(head);
 
 return 0;
 }
