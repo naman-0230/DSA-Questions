@@ -1,24 +1,26 @@
 #include<iostream>
 using namespace std;
 
-class Node{
+class Node {
 public:
     int data;
     Node* next;
 
-    Node(int x){
+    Node(int x) {
         data = x;
         next = nullptr;
     }
 };
 
-void print(Node* head){
-    while(head != nullptr){
-        cout << head->data << " ";
-        head = head->next;
+void print(Node* head) {
+    Node* temp = head;
+    while (temp != nullptr) {
+        cout << temp->data << " ";
+        temp = temp->next;
     }
     cout << endl;
 }
+
 
 Node* merge(Node* l1, Node* l2){
     
@@ -74,37 +76,39 @@ Node* merge(Node* l1, Node* l2){
     return dummy.next;
 }
 
-int main(){
+Node* sorting(Node* head){
+    
+    if(head == nullptr || head->next == nullptr) return head;
+    
+    Node* slow = head;
+    Node* prevslow = nullptr;
+    Node* fast = head;
+    while(fast != nullptr && fast->next != nullptr){
+        prevslow = slow;
+        slow = slow->next;
+        fast = fast->next->next;
+    }
+    if(prevslow != nullptr) prevslow->next = nullptr;
 
-    // List 1: 1 -> 3 -> 5 -> 7
-    Node* a1 = new Node(1);
-    Node* a2 = new Node(3);
-    Node* a3 = new Node(5);
-    Node* a4 = new Node(7);
+    Node* l1 = sorting(head);
+    Node* l2 = sorting(slow);
+    return merge(l1,l2);
+}
 
-    a1->next = a2;
-    a2->next = a3;
-    a3->next = a4;
+int main() {
 
-    Node* l1 = a1;
+    Node* head = new Node(10);
+    head->next = new Node(40);
+    head->next->next = new Node(20);
+    head->next->next->next = new Node(45);
+    head->next->next->next->next = new Node(9);
+    head->next->next->next->next->next = new Node(0);
 
+    cout << "Original list: ";
+    print(head);
 
-    // List 2: 2 -> 4 -> 6 -> 8
-    Node* b1 = new Node(2);
-    Node* b2 = new Node(4);
-    Node* b3 = new Node(6);
-    Node* b4 = new Node(8);
-
-    b1->next = b2;
-    b2->next = b3;
-    b3->next = b4;
-
-    Node* l2 = b1;
-
-
-    // Call your function
-    Node* ans = merge(l1, l2);
-
+    cout << "After sorting: ";
+    Node* ans = sorting(head); 
     print(ans);
 
     return 0;

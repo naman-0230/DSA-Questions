@@ -2,10 +2,10 @@
 using namespace std;
 
 class Node{
-public:
+    public:
     int data;
     Node* next;
-
+    
     Node(int x){
         data = x;
         next = nullptr;
@@ -13,99 +13,68 @@ public:
 };
 
 void print(Node* head){
-    while(head != nullptr){
-        cout << head->data << " ";
-        head = head->next;
+    Node* current = head;
+    while(current != nullptr){
+        cout<<current->data<<" ";
+        current = current->next;
     }
-    cout << endl;
 }
 
-Node* merge(Node* l1, Node* l2){
-    
-    if(l1 == nullptr) return l2;
-    if(l2 == nullptr) return l1;
+Node* rotateRight(Node* head, int k) {
 
-    Node dummy(0);
-    Node* tail_ans = &dummy;
-    
-    Node* curr1 = l1;
-    Node* curr2 = l2;
+    if(!head || !head->next || k == 0)
+        return head;
 
-    if(l1->data <= l2->data){
-        tail_ans->next = l1;
-        curr1 = l1->next;
-    } 
-    else{
-        tail_ans->next = l2;
-        curr2 = l2->next;
+    // Step 1: find length
+    int n = 1;
+    Node* tail = head;
+
+    while(tail->next) {
+        tail = tail->next;
+        n++;
     }
 
-    tail_ans = tail_ans->next;
+    // Step 2: normalize k
+    k = k % n;
+    if(k == 0) return head;
 
-    while(curr1 != nullptr && curr2 != nullptr){
+    // Step 3: make circular
+    tail->next = head;
 
-        if(curr1->data < curr2->data){
+    // Step 4: find new tail (n-k steps)
+    int steps = n - k;
+    Node* newTail = head;
 
-            tail_ans->next = curr1;
-            tail_ans = tail_ans->next;
-            curr1 = curr1->next;
-        }
-
-        else{
-
-            tail_ans->next = curr2;
-            tail_ans = tail_ans->next;
-            curr2 = curr2->next;
-        }
+    for(int i = 1; i < steps; i++) {
+        newTail = newTail->next;
     }
 
-    //for remaining nodes
-    while(curr1 != nullptr){
-        tail_ans->next = curr1;
-        tail_ans = tail_ans->next;
-        curr1 = curr1->next;
-    }
-    while(curr2 != nullptr){
-        tail_ans->next = curr2;
-        tail_ans = tail_ans->next;
-        curr2 = curr2->next;
-    }
+    // Step 5: new head
+    Node* newHead = newTail->next;
 
-    return dummy.next;
+    // Step 6: break circle
+    newTail->next = nullptr;
+
+    return newHead;
 }
 
 int main(){
-
-    // List 1: 1 -> 3 -> 5 -> 7
-    Node* a1 = new Node(1);
-    Node* a2 = new Node(3);
-    Node* a3 = new Node(5);
-    Node* a4 = new Node(7);
-
-    a1->next = a2;
-    a2->next = a3;
-    a3->next = a4;
-
-    Node* l1 = a1;
-
-
-    // List 2: 2 -> 4 -> 6 -> 8
-    Node* b1 = new Node(2);
-    Node* b2 = new Node(4);
-    Node* b3 = new Node(6);
-    Node* b4 = new Node(8);
-
-    b1->next = b2;
-    b2->next = b3;
-    b3->next = b4;
-
-    Node* l2 = b1;
+    Node* first = new Node(10);
+    Node* second = new Node(20);
+    Node* third = new Node(30);
+    Node* fourth = new Node(40);
+    Node* fifth = new Node(50);
+    Node* sixth = new Node(60);
+    Node* head = first;
+    first->next = second;
+    second->next = third;
+    third->next = fourth;
+    fourth->next = fifth;
+    fifth->next = sixth;
 
 
-    // Call your function
-    Node* ans = merge(l1, l2);
+    head = rotateRight(head,3);
+    print(head);
 
-    print(ans);
-
-    return 0;
+return 0;
 }
