@@ -36,7 +36,7 @@ Node* getIntersection(Node* headA, Node* headB){
 
 int main(){
 
-    // المشتركة (intersection part)
+    //(intersection part)
     Node* c1 = new Node(8);
     Node* c2 = new Node(9);
     c1->next = c2;
